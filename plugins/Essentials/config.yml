@@ -267,8 +267,8 @@ player-commands:
   - ignore
   - info
   - itemdb
-  - kit
-  - kits.tools
+  #- kit
+  #- kits.tools
   - list
   - mail
   - mail.send
@@ -316,8 +316,8 @@ player-commands:
   - tpaccept
   - tpahere
   - tpdeny
-  - warp
-  - warp.list
+  #- warp
+  #- warp.list
   - world
   - worth
   - xmpp
@@ -326,7 +326,7 @@ player-commands:
 # This is useful if you want superperms-based permissions (with wildcards) for custom permissions plugins.
 # If you wish to use EssentialsX's built-in permissions using the `player-commands` section above, set this to false.
 # Default is true.
-use-bukkit-permissions: true
+use-bukkit-permissions: false
 
 # When this option is enabled, one-time use kits (ie. delay < 0) will be
 # removed from the /kit list when a player can no longer use it
@@ -500,7 +500,7 @@ afk-list-name: "none"
 # When a player enters or exits AFK mode, should the AFK notification be broadcast
 # to the entire server, or just to the player?
 # When this setting is false, only the player will be notified upon changing their AFK state.
-broadcast-afk-message: true
+broadcast-afk-message: false
 
 # You can disable the death messages of Minecraft here.
 death-messages: true
@@ -595,7 +595,7 @@ unsafe-enchantments: false
 
 #Do you want Essentials to keep track of previous location for /back in the teleport listener?
 #If you set this to true any plugin that uses teleport will have the previous location registered.
-register-back-in-listener: false
+register-back-in-listener: true
 
 #Delay to wait before people can cause attack damage after logging in.
 login-attack-delay: 5
@@ -637,7 +637,7 @@ last-message-reply-vanished: false
 milk-bucket-easter-egg: true
 
 # Toggles whether or not the fly status message should be sent to players on join
-send-fly-enable-on-join: true
+send-fly-enable-on-join: false
 
 # Set to true to enable per-world permissions for setting time for individual worlds with essentials commands.
 # This applies to /time, /day, /eday, /night, /enight, /etime.
@@ -771,7 +771,7 @@ compass-towards-home-perm: false
 
 # If no home is set, would you like to send the player to spawn?
 # If set to false, players will not be teleported when they run /home without setting a home first.
-spawn-if-no-home: true
+spawn-if-no-home: false
 
 # Should players be asked to provide confirmation for homes which they attempt to overwrite?
 confirm-home-overwrite: false
@@ -1130,12 +1130,12 @@ newbies:
 
   # When we spawn for the first time, which spawnpoint do we use?
   # Set to "none" if you want to use the spawn point of the world.
-  spawnpoint: newbies
+  spawnpoint: "none"
 
   # Do we want to give users anything on first join? Set to '' to disable
   # This kit will be given regardless of cost and permissions, and will not trigger the kit delay.
-  #kit: ''
-  kit: tools
+  kit: ''
+  #kit: tools
 
 # What priority should we use for handling respawns?
 # Set this to none, if you want vanilla respawning behaviour.
@@ -1143,7 +1143,7 @@ newbies:
 # Set this to high, if you want EssentialsSpawn to handle the respawning.
 # Set this to highest, if you want to force EssentialsSpawn to handle the respawning.
 # Note: Changes will not apply until after the server is restarted.
-respawn-listener-priority: high
+respawn-listener-priority: highest
 
 # What priority should we use for handling spawning on joining the server?
 # See respawn-listener-priority for possible values.
@@ -1152,14 +1152,14 @@ respawn-listener-priority: high
 spawn-join-listener-priority: high
 
 # When users die, should they respawn at their first home or bed, instead of the spawnpoint?
-respawn-at-home: false
+respawn-at-home: true
 
 # When users die, should they respawn at their bed instead of the spawnpoint?
 # The value of respawn-at-home (above) has to be true.
 respawn-at-home-bed: true
 
 # When users die, should EssentialsSpawn respect users' respawn anchors?
-respawn-at-anchor: false
+respawn-at-anchor: true
 
 # Teleport all joining players to the spawnpoint
 spawn-on-join: false
